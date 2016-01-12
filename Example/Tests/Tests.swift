@@ -4,47 +4,41 @@ import Quick
 import Nimble
 import UIViewSweets
 
-class TableOfContentsSpec: QuickSpec {
+class OriginSpec: QuickSpec {
     override func spec() {
-        describe("these will fail") {
-
-            it("can do maths") {
-                expect(1) == 2
+        var view:UIView!
+        beforeEach {
+            view = UIView(frame: CGRect(x:10,y:11,width: 12,height: 13))
+        }
+        describe ("an UIView init with frame"){
+            it("frame.origin.x equals to x"){
+                expect(view.x) == view.frame.origin.x
             }
-
-            it("can read") {
-                expect("number") == "string"
-            }
-
-            it("will eventually fail") {
-                expect("time").toEventually( equal("done") )
+        }
+        describe("after change frame of view"){
+            beforeEach{
+                view.frame.origin.x = 7
             }
             
-            context("these will pass") {
-
-                it("can do maths") {
-                    expect(23) == 23
-                }
-
-                it("can read") {
-                    expect("🐮") == "🐮"
-                }
-
-                it("will eventually pass") {
-                    var time = "passing"
-
-                    dispatch_async(dispatch_get_main_queue()) {
-                        time = "done"
-                    }
-
-                    waitUntil { done in
-                        NSThread.sleepForTimeInterval(0.5)
-                        expect(time) == "done"
-
-                        done()
-                    }
-                }
+            it("frame.origin.x now equals to 7"){
+                expect(view.frame.origin.x) == 7
+            }
+            it("frame.origin.x equals to x"){
+                expect(view.x) == view.frame.origin.x
+            }
+        }
+        describe("after change x"){
+            beforeEach{
+                view.x = 7
+            }
+            it("x now equals to 7"){
+                expect(view.frame.origin.x) == 7
+            }
+            it("frame.origin.x equals to x"){
+                expect(view.x) == view.frame.origin.x
             }
         }
     }
 }
+
+
