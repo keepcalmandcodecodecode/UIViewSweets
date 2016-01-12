@@ -1,0 +1,6 @@
+framework module Pods_UIViewSweets_Tests {
+  umbrella header "Pods-UIViewSweets_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
