@@ -32,6 +32,10 @@ class FrameSpec: QuickSpec {
             it("frame.size equals to size"){
                 expect(view.size) == view.frame.size
             }
+            
+            it("frame.origin equals to origin"){
+                expect(view.origin) == view.frame.origin
+            }
         }
         describe("after change frame of view"){
             beforeEach{
@@ -61,6 +65,10 @@ class FrameSpec: QuickSpec {
                 expect(view.frame.size) == CGSize(width: 10, height: 9)
             }
             
+            it("frame.origin now equals to (7,8)"){
+                expect(view.frame.origin) == CGPoint(x: 7, y: 8)
+            }
+            
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
@@ -79,6 +87,10 @@ class FrameSpec: QuickSpec {
             
             it("frame.size equals to size"){
                 expect(view.size) == view.frame.size
+            }
+            
+            it("frame.origin equals to origin"){
+                expect(view.origin) == view.frame.origin
             }
         }
         describe("after change x"){
@@ -100,6 +112,13 @@ class FrameSpec: QuickSpec {
             it("width now equals to 10"){
                 expect(view.frame.size.width) == 10
             }
+            it("size now equals to (10,9)"){
+                expect(view.frame.size) == CGSize(width: 10, height: 9)
+            }
+            it("origin now equals to (7,8)"){
+                expect(view.frame.origin) == CGPoint(x:7, y:8)
+            }
+            
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
@@ -115,6 +134,10 @@ class FrameSpec: QuickSpec {
             it("frame.size equals to size"){
                 expect(view.size) == view.frame.size
             }
+            it("frame.origin equals to origin"){
+                expect(view.origin) == view.frame.origin
+            }
+            
         }
     }
 }
