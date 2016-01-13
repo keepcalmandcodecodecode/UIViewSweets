@@ -19,4 +19,13 @@ extension UIView{
             self.frame.origin.x = newValue
         }
     }
+    public var y:CGFloat{
+        get{
+            return self.frame.origin.y
+        }
+        
+        set{
+            self.frame.origin.y = newValue
+        }
+    }
 }
