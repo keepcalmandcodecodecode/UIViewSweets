@@ -11,17 +11,25 @@ class OriginSpec: QuickSpec {
             view = UIView(frame: CGRect(x:10,y:11,width: 12,height: 13))
         }
         describe ("an UIView init with frame"){
+            
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
+            
             it("frame.origin.y equals to y"){
                 expect(view.y) == view.frame.origin.y
-             }
+            }
+            
+            it("frame.size.height equals to height"){
+                expect(view.height) == view.frame.size.height
+            }
+            
         }
         describe("after change frame of view"){
             beforeEach{
                 view.frame.origin.x = 7
                 view.frame.origin.y = 8
+                view.frame.size.height = 9
             }
             
             it("frame.origin.x now equals to 7"){
@@ -32,6 +40,10 @@ class OriginSpec: QuickSpec {
                 expect(view.frame.origin.y) == 8
             }
             
+            it("frame.size.height now equals to 9"){
+                expect(view.frame.size.height) == 9
+            }
+            
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
@@ -39,11 +51,16 @@ class OriginSpec: QuickSpec {
             it("frame.origin.y equals to y"){
                 expect(view.y) == view.frame.origin.y
             }
+            
+            it("frame.size.height equals to height"){
+                expect(view.height) == view.frame.size.height
+            }
         }
         describe("after change x"){
             beforeEach{
                 view.x = 7
                 view.y = 8
+                view.height = 9
             }
             it("x now equals to 7"){
                 expect(view.frame.origin.x) == 7
@@ -51,11 +68,17 @@ class OriginSpec: QuickSpec {
             it("y now equals to 8"){
                 expect(view.frame.origin.y) == 8
             }
+            it("height now equals to 9"){
+                expect(view.frame.size.height) == 9
+            }
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
             it("frame.origin.y equals to y"){
                 expect(view.y) == view.frame.origin.y
+            }
+            it("frame.size.height equals to height"){
+                expect(view.height) == view.frame.size.height
             }
         }
     }
