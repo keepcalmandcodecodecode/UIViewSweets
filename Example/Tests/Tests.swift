@@ -4,7 +4,8 @@ import Quick
 import Nimble
 import UIViewSweets
 
-class SweetsSpec: QuickSpec {
+
+class FrameSpec: QuickSpec {
     override func spec() {
         var view:UIView!
         beforeEach {
@@ -26,6 +27,10 @@ class SweetsSpec: QuickSpec {
             
             it("frame.size.width equals to width"){
                 expect(view.width) == view.frame.size.width
+            }
+            
+            it("frame.size equals to size"){
+                expect(view.size) == view.frame.size
             }
         }
         describe("after change frame of view"){
@@ -52,6 +57,10 @@ class SweetsSpec: QuickSpec {
                 expect(view.frame.size.width) == 10
             }
             
+            it("frame.size now equals to (10,9)"){
+                expect(view.frame.size) == CGSize(width: 10, height: 9)
+            }
+            
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
@@ -66,6 +75,10 @@ class SweetsSpec: QuickSpec {
             
             it("frame.size.width equals to width"){
                 expect(view.width) == view.frame.size.width
+            }
+            
+            it("frame.size equals to size"){
+                expect(view.size) == view.frame.size
             }
         }
         describe("after change x"){
@@ -98,6 +111,9 @@ class SweetsSpec: QuickSpec {
             }
             it("frame.size.width equals to width"){
                 expect(view.width) == view.frame.size.width
+            }
+            it("frame.size equals to size"){
+                expect(view.size) == view.frame.size
             }
         }
     }

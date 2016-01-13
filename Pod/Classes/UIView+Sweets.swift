@@ -48,4 +48,13 @@ extension UIView{
             self.frame.size.width = newValue
         }
     }
+    
+    public var size:CGSize{
+        get{
+            return self.frame.size
+        }
+        set{
+            self.frame.size = newValue
+        }
+    }
 }
