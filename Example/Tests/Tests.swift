@@ -14,28 +14,48 @@ class OriginSpec: QuickSpec {
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
+            it("frame.origin.y equals to y"){
+                expect(view.y) == view.frame.origin.y
+             }
         }
         describe("after change frame of view"){
             beforeEach{
                 view.frame.origin.x = 7
+                view.frame.origin.y = 8
             }
             
             it("frame.origin.x now equals to 7"){
                 expect(view.frame.origin.x) == 7
             }
+            
+            it("frame.origin.y now equals to 8"){
+                expect(view.frame.origin.y) == 8
+            }
+            
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
+            }
+            
+            it("frame.origin.y equals to y"){
+                expect(view.y) == view.frame.origin.y
             }
         }
         describe("after change x"){
             beforeEach{
                 view.x = 7
+                view.y = 8
             }
             it("x now equals to 7"){
                 expect(view.frame.origin.x) == 7
             }
+            it("y now equals to 8"){
+                expect(view.frame.origin.y) == 8
+            }
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
+            }
+            it("frame.origin.y equals to y"){
+                expect(view.y) == view.frame.origin.y
             }
         }
     }
