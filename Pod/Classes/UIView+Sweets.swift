@@ -38,4 +38,14 @@ extension UIView{
             self.frame.size.height = newValue
         }
     }
+    
+    public var width:CGFloat{
+        get{
+            return self.frame.size.width
+        }
+        
+        set{
+            self.frame.size.width = newValue
+        }
+    }
 }
