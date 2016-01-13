@@ -4,7 +4,7 @@ import Quick
 import Nimble
 import UIViewSweets
 
-class OriginSpec: QuickSpec {
+class SweetsSpec: QuickSpec {
     override func spec() {
         var view:UIView!
         beforeEach {
@@ -24,12 +24,16 @@ class OriginSpec: QuickSpec {
                 expect(view.height) == view.frame.size.height
             }
             
+            it("frame.size.width equals to width"){
+                expect(view.width) == view.frame.size.width
+            }
         }
         describe("after change frame of view"){
             beforeEach{
                 view.frame.origin.x = 7
                 view.frame.origin.y = 8
                 view.frame.size.height = 9
+                view.frame.size.width = 10
             }
             
             it("frame.origin.x now equals to 7"){
@@ -44,6 +48,10 @@ class OriginSpec: QuickSpec {
                 expect(view.frame.size.height) == 9
             }
             
+            it("frame.size.width now equals to 10"){
+                expect(view.frame.size.width) == 10
+            }
+            
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
@@ -55,12 +63,17 @@ class OriginSpec: QuickSpec {
             it("frame.size.height equals to height"){
                 expect(view.height) == view.frame.size.height
             }
+            
+            it("frame.size.width equals to width"){
+                expect(view.width) == view.frame.size.width
+            }
         }
         describe("after change x"){
             beforeEach{
                 view.x = 7
                 view.y = 8
                 view.height = 9
+                view.width = 10
             }
             it("x now equals to 7"){
                 expect(view.frame.origin.x) == 7
@@ -71,6 +84,9 @@ class OriginSpec: QuickSpec {
             it("height now equals to 9"){
                 expect(view.frame.size.height) == 9
             }
+            it("width now equals to 10"){
+                expect(view.frame.size.width) == 10
+            }
             it("frame.origin.x equals to x"){
                 expect(view.x) == view.frame.origin.x
             }
@@ -79,6 +95,9 @@ class OriginSpec: QuickSpec {
             }
             it("frame.size.height equals to height"){
                 expect(view.height) == view.frame.size.height
+            }
+            it("frame.size.width equals to width"){
+                expect(view.width) == view.frame.size.width
             }
         }
     }
