@@ -57,4 +57,13 @@ extension UIView{
             self.frame.size = newValue
         }
     }
+    
+    public var origin:CGPoint{
+        get{
+            return self.frame.origin
+        }
+        set{
+            self.frame.origin = newValue
+        }
+    }
 }
