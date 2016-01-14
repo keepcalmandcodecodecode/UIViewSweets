@@ -4,7 +4,6 @@ import Quick
 import Nimble
 import UIViewSweets
 
-
 class FrameSpec: QuickSpec {
     override func spec() {
         var view:UIView!
@@ -142,4 +141,33 @@ class FrameSpec: QuickSpec {
     }
 }
 
-
+class ViewHieararchySpec: QuickSpec{
+    override func spec(){
+        var view:UIView!
+        beforeEach{
+            view = UIView()
+            
+            let firstSubview = UIView()
+            view.addSubview(firstSubview)
+            
+            let secondSubview = UIView()
+            view.addSubview(secondSubview)
+        }
+        
+        describe("an UIView with two subviews"){
+            it("subviews count is 2"){
+                expect(view.subviews.count) == 2
+            }
+            view.removeSubviews()
+            it("subviews count is 0"){
+                expect(view.subviews.count) == 0
+            }
+            view.removeSubviews()
+            it("subviews count is still 0"){
+                expect(view.subviews.count) == 0
+            }
+            
+            
+        }
+    }
+}
