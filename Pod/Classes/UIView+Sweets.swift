@@ -66,4 +66,10 @@ extension UIView{
             self.frame.origin = newValue
         }
     }
+    
+    public func removeSubviews(){
+        while self.subviews.count > 0 {
+            self.subviews.last?.removeFromSuperview()
+        }
+    }
 }

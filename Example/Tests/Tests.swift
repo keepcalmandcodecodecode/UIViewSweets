@@ -153,21 +153,19 @@ class ViewHieararchySpec: QuickSpec{
             let secondSubview = UIView()
             view.addSubview(secondSubview)
         }
-        
         describe("an UIView with two subviews"){
+
+            
             it("subviews count is 2"){
                 expect(view.subviews.count) == 2
             }
-            view.removeSubviews()
+
             it("subviews count is 0"){
+                view.removeSubviews()
+                expect(view.subviews.count) == 0
+                view.removeSubviews()
                 expect(view.subviews.count) == 0
             }
-            view.removeSubviews()
-            it("subviews count is still 0"){
-                expect(view.subviews.count) == 0
-            }
-            
-            
         }
     }
 }
